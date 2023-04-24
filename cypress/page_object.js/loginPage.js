@@ -18,6 +18,10 @@ class LoginPage {
         return cy.get(".btn-primary").first();
     }
 
+    get logoutBtn() {
+        return cy.get(".icon-logout");
+    }
+
     login(username, password) {
         this.usernameInput.type(username);
         this.passwordInput.type(password);

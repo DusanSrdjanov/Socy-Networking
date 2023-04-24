@@ -19,6 +19,11 @@ describe("Posts and comments test", () => {
         cy.url().should("include", "/sign-in");
         
         loginPage.login(credentials.validUser, credentials.validPassword);
+        cy.wait(2000);
+    })
+
+    it("Visit personal profile test", () => {
+        homePage.userProfile.click();
     })
 
     it("Create a post test", () => {

@@ -21,23 +21,28 @@ describe("Login test", () => {
             .should("be.visible"); 
     })
 
-    it("Login without username", () => {
+    it("Login without username test", () => {
         loginPage.login(credentials.invalidUser, credentials.validPassword);
     })
 
-    it("Login without password", () => {
+    it("Login without password test", () => {
         loginPage.login(credentials.validUser, credentials.invalidPassword);
     })
 
-    it("Login with wrong username", () => {
+    it("Login with wrong username test", () => {
         loginPage.login(credentials.wrongUser, credentials.validPassword);
     })
 
-    it("Login with wrong password", () => {
+    it("Login with wrong password test", () => {
         loginPage.login(credentials.validUser, credentials.wrongPassword);
     })
 
-    it("Login with valid credentials", () => {
+    it("Login with valid credentials test", () => {
         loginPage.login(credentials.validUser, credentials.validPassword);
+    })
+
+    it("Login and logout with valid credentials test", () => {
+        loginPage.login(credentials.validUser, credentials.validPassword);
+        loginPage.logoutBtn.click();
     })
 });

@@ -68,6 +68,10 @@ class HomePage {
         this.commentBtn.click();
     }
 
+    get userProfile() {
+        return cy.get(".icon-user");
+    }
+
 }
 
 export const homePage = new HomePage
