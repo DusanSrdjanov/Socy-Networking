@@ -10,7 +10,8 @@ const credentials = {
     postContent: faker.random.word(),
     editPostContent: faker.random.words(2),
     commentContent: faker.random.word(),
-    editCommentContent: faker.random.words(2)
+    editCommentContent: faker.random.words(2),
+    blankspace: "{backspace}",
 }
 
 describe("Posts and comments test", () => {
@@ -24,6 +25,16 @@ describe("Posts and comments test", () => {
 
     it("Visit personal profile test", () => {
         homePage.userProfile.click();
+    })
+
+    it("Create a post without content test", () => {
+        homePage.createPost(credentials.blankspace);
+    })
+
+    it("Create a comment without content test", () => {
+        homePage.createPost(credentials.postContent);
+        cy.wait(2000);
+        homePage.createComment(credentials.blankspace);
     })
 
     it("Create a post test", () => {
